@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ReginaMaria
 {
-    public partial class Form1 : Form
+    public partial class FormDrugs : Form
     {
-        public Form1()
+        public FormDrugs()
         {
             InitializeComponent();
+        }
+
+        private void FormDrugs_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
