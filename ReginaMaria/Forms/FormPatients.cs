@@ -24,7 +24,15 @@ namespace ReginaMaria
             MessageBox.Show("Successfully Inserted ...");
             GetPatients(); 
         }
+        void GetPatients()
+        {
+            SqlCommand c = new SqlCommand("exec GetPatients", con);
+            SqlDataAdapter sd = new SqlDataAdapter(c);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            dataGridView1.DataSource = dt;
 
+        }
 
         private void FormPatients_Load(object sender, System.EventArgs e)
         {
