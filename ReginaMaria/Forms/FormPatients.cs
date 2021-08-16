@@ -51,5 +51,15 @@ namespace ReginaMaria
             MessageBox.Show("Successfully Updated ...");
             GetPatients();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int patientId = int.Parse(patientID.Text);
+            con.Open();
+            SqlCommand c = new SqlCommand(" exec DeletePatient '" + patientId + "'", con);
+            c.ExecuteNonQuery();
+            MessageBox.Show("Successfully Deleted ...");
+            GetPatients();
+        }
     }
 }
