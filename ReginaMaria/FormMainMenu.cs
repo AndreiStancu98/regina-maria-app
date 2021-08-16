@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FontAwesome.Sharp;
 
 namespace ReginaMaria
 {
@@ -44,7 +38,7 @@ namespace ReginaMaria
             public static Color color5 = Color.FromArgb(249, 88, 155);
             public static Color color6 = Color.FromArgb(24, 161, 251);
         }
-        
+
         //Methods
         private void ActivateButton(object senderBtn, Color color)
         {
@@ -79,7 +73,7 @@ namespace ReginaMaria
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                currentBtn.ImageAlign = ContentAlignment.MiddleLeft; 
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
 
@@ -140,9 +134,9 @@ namespace ReginaMaria
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-           
-           // currentChildForm.Close();
-             
+
+            // currentChildForm.Close();
+
             Reset();
         }
 
