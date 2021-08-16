@@ -38,5 +38,18 @@ namespace ReginaMaria
         {
             GetPatients();
         }
+
+        private void updatePatient_Click(object sender, EventArgs e)
+        {
+            int patientId = int.Parse(patientID.Text);
+            string patientFirstName = firstName.Text;
+            string patientLastName = lastName.Text;
+            DateTime patientBirthDate = DateTime.Parse(birthDate.Text);
+            con.Open();
+            SqlCommand c = new SqlCommand(" exec UpdatePatient '" + patientId + "', '" + patientFirstName + "', '" + patientLastName + "', '" + patientBirthDate + "', '" + null + "'", con);
+            c.ExecuteNonQuery();
+            MessageBox.Show("Successfully Updated ...");
+            GetPatients();
+        }
     }
 }

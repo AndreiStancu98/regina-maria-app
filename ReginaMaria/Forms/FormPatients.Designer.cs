@@ -38,6 +38,7 @@ namespace ReginaMaria
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.patientID = new System.Windows.Forms.TextBox();
+            this.updatePatient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,12 +121,23 @@ namespace ReginaMaria
             this.patientID.Size = new System.Drawing.Size(100, 20);
             this.patientID.TabIndex = 8;
             // 
+            // updatePatient
+            // 
+            this.updatePatient.Location = new System.Drawing.Point(192, 300);
+            this.updatePatient.Name = "updatePatient";
+            this.updatePatient.Size = new System.Drawing.Size(90, 23);
+            this.updatePatient.TabIndex = 9;
+            this.updatePatient.Text = "Update Patient";
+            this.updatePatient.UseVisualStyleBackColor = true;
+            this.updatePatient.Click += new System.EventHandler(this.updatePatient_Click);
+            // 
             // FormPatients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.updatePatient);
             this.Controls.Add(this.patientID);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
@@ -155,5 +167,6 @@ namespace ReginaMaria
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox patientID;
+        private System.Windows.Forms.Button updatePatient;
     }
 }
