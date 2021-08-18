@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ namespace ReginaMaria
 
         private void FormDrugs_Load(object sender, EventArgs e)
         {
-
+            GetDrugs();
         }
 
         private void addDrugs_Click(object sender, EventArgs e)
@@ -29,6 +30,16 @@ namespace ReginaMaria
             c.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Successfully Inserted ...");
+            GetDrugs();
+        }
+        void GetDrugs()
+        {
+            SqlCommand c = new SqlCommand("exec ListDrugs", con);
+            SqlDataAdapter sd = new SqlDataAdapter(c);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            dataGridView1.DataSource = dt;
+
         }
     }
 }
