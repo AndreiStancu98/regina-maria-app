@@ -83,6 +83,7 @@ namespace ReginaMaria
             this.deleteDrug.TabIndex = 37;
             this.deleteDrug.Text = "Delete Drug";
             this.deleteDrug.UseVisualStyleBackColor = true;
+            this.deleteDrug.Click += new System.EventHandler(this.deleteDrug_Click);
             // 
             // updateDrugs
             // 

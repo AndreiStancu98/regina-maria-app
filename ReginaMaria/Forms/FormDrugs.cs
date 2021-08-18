@@ -56,5 +56,19 @@ namespace ReginaMaria
             MessageBox.Show("Successfully Updated ...");
             GetDrugs();
         }
+
+        private void deleteDrug_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to delete?", "Delete Drugs", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int drugId = int.Parse(drugID.Text);
+                con.Open();
+                SqlCommand c = new SqlCommand(" exec DeleteDrug '" + drugId + "'", con);
+                c.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Successfully Deleted ...");
+                GetDrugs();
+            }
+        }
     }
 }
