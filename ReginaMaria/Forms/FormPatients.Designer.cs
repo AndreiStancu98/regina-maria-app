@@ -40,6 +40,7 @@ namespace ReginaMaria
             this.patientID = new System.Windows.Forms.TextBox();
             this.updatePatient = new System.Windows.Forms.Button();
             this.deletePatient = new System.Windows.Forms.Button();
+            this.loadPatient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,12 +143,23 @@ namespace ReginaMaria
             this.deletePatient.UseVisualStyleBackColor = true;
             this.deletePatient.Click += new System.EventHandler(this.button2_Click);
             // 
+            // loadPatient
+            // 
+            this.loadPatient.Location = new System.Drawing.Point(86, 342);
+            this.loadPatient.Name = "loadPatient";
+            this.loadPatient.Size = new System.Drawing.Size(90, 23);
+            this.loadPatient.TabIndex = 11;
+            this.loadPatient.Text = "Load Patient";
+            this.loadPatient.UseVisualStyleBackColor = true;
+            this.loadPatient.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // FormPatients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.loadPatient);
             this.Controls.Add(this.deletePatient);
             this.Controls.Add(this.updatePatient);
             this.Controls.Add(this.patientID);
@@ -181,5 +193,6 @@ namespace ReginaMaria
         private System.Windows.Forms.TextBox patientID;
         private System.Windows.Forms.Button updatePatient;
         private System.Windows.Forms.Button deletePatient;
+        private System.Windows.Forms.Button loadPatient;
     }
 }

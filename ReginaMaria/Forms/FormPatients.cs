@@ -19,10 +19,11 @@ namespace ReginaMaria
             string patientLastName = lastName.Text;
             DateTime patientBirthDate = DateTime.Parse(birthDate.Text);
             con.Open();
-            SqlCommand c = new SqlCommand(" exec InsertPatient '" + patientId + "', '"+ patientFirstName + "', '" + patientLastName + "', '" + patientBirthDate + "', '" + null + "'", con);
+            SqlCommand c = new SqlCommand(" exec InsertPatient '" + patientId + "', '" + patientFirstName + "', '" + patientLastName + "', '" + patientBirthDate + "', '" + null + "'", con);
             c.ExecuteNonQuery();
+            con.Close();
             MessageBox.Show("Successfully Inserted ...");
-            GetPatients(); 
+            GetPatients();
         }
         void GetPatients()
         {
@@ -48,18 +49,35 @@ namespace ReginaMaria
             con.Open();
             SqlCommand c = new SqlCommand(" exec UpdatePatient '" + patientId + "', '" + patientFirstName + "', '" + patientLastName + "', '" + patientBirthDate + "', '" + null + "'", con);
             c.ExecuteNonQuery();
+            con.Close();
             MessageBox.Show("Successfully Updated ...");
             GetPatients();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure to delete?", "Delete Patient", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int patientId = int.Parse(patientID.Text);
+                con.Open();
+                SqlCommand c = new SqlCommand(" exec DeletePatient '" + patientId + "'", con);
+                c.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Successfully Deleted ...");
+                GetPatients();
+            }
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
             int patientId = int.Parse(patientID.Text);
-            con.Open();
-            SqlCommand c = new SqlCommand(" exec DeletePatient '" + patientId + "'", con);
-            c.ExecuteNonQuery();
-            MessageBox.Show("Successfully Deleted ...");
-            GetPatients();
+            SqlCommand c = new SqlCommand(" exec LoadPatient '" + patientId + "'", con);
+            SqlDataAdapter sd = new SqlDataAdapter(c);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            dataGridView1.DataSource = dt;
+            MessageBox.Show("Successfully Loaded ...");
         }
     }
 }
