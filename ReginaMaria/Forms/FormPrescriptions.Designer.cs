@@ -29,7 +29,6 @@ namespace ReginaMaria
         /// </summary>
         private void InitializeComponent()
         {
-            this.loadPrescription = new System.Windows.Forms.Button();
             this.deletePrescription = new System.Windows.Forms.Button();
             this.updatePrescription = new System.Windows.Forms.Button();
             this.prescriptionID = new System.Windows.Forms.TextBox();
@@ -47,23 +46,15 @@ namespace ReginaMaria
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // loadPrescription
-            // 
-            this.loadPrescription.Location = new System.Drawing.Point(212, 145);
-            this.loadPrescription.Name = "loadPrescription";
-            this.loadPrescription.Size = new System.Drawing.Size(98, 23);
-            this.loadPrescription.TabIndex = 23;
-            this.loadPrescription.Text = "Load Prescription";
-            this.loadPrescription.UseVisualStyleBackColor = true;
-            // 
             // deletePrescription
             // 
-            this.deletePrescription.Location = new System.Drawing.Point(201, 174);
+            this.deletePrescription.Location = new System.Drawing.Point(201, 145);
             this.deletePrescription.Name = "deletePrescription";
             this.deletePrescription.Size = new System.Drawing.Size(109, 23);
             this.deletePrescription.TabIndex = 22;
             this.deletePrescription.Text = "Delete Prescription";
             this.deletePrescription.UseVisualStyleBackColor = true;
+            this.deletePrescription.Click += new System.EventHandler(this.deletePrescription_Click);
             // 
             // updatePrescription
             // 
@@ -87,7 +78,7 @@ namespace ReginaMaria
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(316, 59);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(429, 258);
+            this.dataGridView1.Size = new System.Drawing.Size(571, 291);
             this.dataGridView1.TabIndex = 19;
             // 
             // addPrescription
@@ -188,11 +179,10 @@ namespace ReginaMaria
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(993, 542);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.patientID);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.loadPrescription);
             this.Controls.Add(this.deletePrescription);
             this.Controls.Add(this.updatePrescription);
             this.Controls.Add(this.prescriptionID);
@@ -214,8 +204,6 @@ namespace ReginaMaria
         }
 
         #endregion
-
-        private System.Windows.Forms.Button loadPrescription;
         private System.Windows.Forms.Button deletePrescription;
         private System.Windows.Forms.Button updatePrescription;
         private System.Windows.Forms.TextBox prescriptionID;
