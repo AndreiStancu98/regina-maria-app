@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -24,7 +25,21 @@ namespace ReginaMaria
             c.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Successfully Inserted ...");
-            
+            GetPrescriptions();
+        }
+        void GetPrescriptions()
+        {
+            SqlCommand c = new SqlCommand("exec ListPrescriptions", con);
+            SqlDataAdapter sd = new SqlDataAdapter(c);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+        }
+
+        private void FormPrescriptions_Load(object sender, EventArgs e)
+        {
+            GetPrescriptions();
         }
     }
 }

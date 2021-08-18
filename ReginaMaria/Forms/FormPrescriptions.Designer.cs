@@ -205,6 +205,7 @@ namespace ReginaMaria
             this.Controls.Add(this.label1);
             this.Name = "FormPrescriptions";
             this.Text = "Prescriptions";
+            this.Load += new System.EventHandler(this.FormPrescriptions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
