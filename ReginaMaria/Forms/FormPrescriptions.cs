@@ -41,5 +41,20 @@ namespace ReginaMaria
         {
             GetPrescriptions();
         }
+
+        private void updatePrescription_Click(object sender, EventArgs e)
+        {
+            int prescriptionId = int.Parse(prescriptionID.Text);
+            string prescriptionSeries = series.Text;
+            int prescriptionNumber = int.Parse(number.Text);
+            DateTime prescriptionReleaseDate = DateTime.Parse(releaseDate.Text);
+            int patientId = int.Parse(patientID.Text);
+            con.Open();
+            SqlCommand c = new SqlCommand(" exec UpdatePrescription '" + prescriptionId + "', '" + prescriptionSeries + "', '" + prescriptionNumber + "', '" + prescriptionReleaseDate + "', '" + patientId + "'", con);
+            c.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Successfully Updated ...");
+            GetPrescriptions();
+        }
     }
 }

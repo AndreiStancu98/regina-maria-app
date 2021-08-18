@@ -73,6 +73,7 @@ namespace ReginaMaria
             this.updatePrescription.TabIndex = 21;
             this.updatePrescription.Text = "Update Prescription";
             this.updatePrescription.UseVisualStyleBackColor = true;
+            this.updatePrescription.Click += new System.EventHandler(this.updatePrescription_Click);
             // 
             // prescriptionID
             // 
