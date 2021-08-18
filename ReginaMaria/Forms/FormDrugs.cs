@@ -41,5 +41,20 @@ namespace ReginaMaria
             dataGridView1.DataSource = dt;
 
         }
+
+        private void updateDrugs_Click(object sender, EventArgs e)
+        {
+            int DrugId = int.Parse(drugID.Text);
+            string DrugName = drugName.Text;
+            int Quantity = int.Parse(quantity.Text);
+            string Dosage = dosage.Text;
+            int PrescriptionId = int.Parse(prescriptionID.Text);
+            con.Open();
+            SqlCommand c = new SqlCommand(" exec UpdateDrug '" + DrugId + "', '" + DrugName + "', '" + Quantity + "', '" + Dosage + "', '" + PrescriptionId + "'", con);
+            c.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Successfully Updated ...");
+            GetDrugs();
+        }
     }
 }

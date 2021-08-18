@@ -92,6 +92,7 @@ namespace ReginaMaria
             this.updateDrugs.TabIndex = 36;
             this.updateDrugs.Text = "Update Drugs";
             this.updateDrugs.UseVisualStyleBackColor = true;
+            this.updateDrugs.Click += new System.EventHandler(this.updateDrugs_Click);
             // 
             // drugID
             // 
